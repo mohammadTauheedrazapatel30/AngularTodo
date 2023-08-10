@@ -1,1 +1,13 @@
 <p>todo works!</p>
+
+<ul *ngFor="let todo1 of todos">
+    <li>{{ todo1.name }}</li>
+</ul>
+
+<input type="text" #user (keydown.enter)="addTodo(user.value); user.value=''">
+
+<select>
+    <ul *ngFor="let todo1 of todos">
+        <li>{{ todo1.name }}</li>
+    </ul>
+</select>

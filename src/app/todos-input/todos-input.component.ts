@@ -8,14 +8,6 @@ import { TodoDTO } from '../dto/TodoDTO';
 })
 export class TodosInputComponent implements OnInit {
 
-  @Input() todos : Array<TodoDTO> = [{name:"Todos 1", status: false},{name : "Todos 2", status : true}]
-  
-  @Output() dataTodo = new EventEmitter<string>();
-  
-  addTodo(value : string){
-    this.dataTodo.emit(value);
-  }
-
   constructor() { }
 
   ngOnInit(): void {
