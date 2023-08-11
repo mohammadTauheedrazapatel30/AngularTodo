@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TodoDTO } from '../dto/TodoDTO';
 
 @Component({
@@ -9,12 +9,11 @@ import { TodoDTO } from '../dto/TodoDTO';
 export class TodosInputListComponent implements OnInit {
 
   todo : Array<TodoDTO> = [{name:"Todo 1", status: false}]
+  
+  @Output() dataEvent = new EventEmitter<string>;
 
-  addTodo(name : string){
-    let todoIn = new TodoDTO();
-    todoIn.name = name;
-    todoIn.status = false;
-    this.todo.push(todoIn);
+  addTodo(value : string){
+      this.dataEvent.emit(value)
   }
 
   constructor() { }

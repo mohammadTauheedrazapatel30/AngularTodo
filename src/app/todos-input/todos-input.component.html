@@ -1,1 +1,3 @@
 <p>todos-input works!</p>
+
+<input type="text" #user (keydown.enter)="addTodo(user.value); user.value=''">

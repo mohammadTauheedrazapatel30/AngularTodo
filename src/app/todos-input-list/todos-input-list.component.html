@@ -1,3 +1,5 @@
 <p>todos-input-list works! / Parent For Todos-Input</p>
 
-<app-todo [todos]="todo" (dataTodo)="addTodo($event)"></app-todo>
+<app-todos-input [todos]="todo" (dataTodo)="addTodo('$event')"></app-todos-input>
+
+<app-todo [todos]="todo" (dataTodo)="addTodo('$event')"></app-todo>
