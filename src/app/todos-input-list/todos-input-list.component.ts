@@ -8,12 +8,13 @@ import { TodoDTO } from '../dto/TodoDTO';
 })
 export class TodosInputListComponent implements OnInit {
 
-  todo : Array<TodoDTO> = [{name:"Todo 1", status: false}]
-  
-  @Output() dataEvent = new EventEmitter<string>;
+  todo = [{name:"Todo 1", status: false}]
 
-  addTodo(value : string){
-      this.dataEvent.emit(value)
+  addTodo(value : any){
+      let todoobj = {name:value, status: false}
+      this.todo.push(todoobj)
+      console.log('todo-----',this.todo);
+      this.todo=[...this.todo];
   }
 
   constructor() { }

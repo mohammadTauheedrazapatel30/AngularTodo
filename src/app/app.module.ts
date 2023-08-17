@@ -8,6 +8,7 @@ import { TodosFooterComponent } from './todos-footer/todos-footer.component';
 import { TodosInputComponent } from './todos-input/todos-input.component';
 import { TodosInputListComponent } from './todos-input-list/todos-input-list.component';
 import { TodoComponent } from './todo/todo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TodoComponent } from './todo/todo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TodoDTO } from '../dto/TodoDTO';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -10,19 +11,18 @@ import { TodoDTO } from '../dto/TodoDTO';
 export class TodoComponent implements OnInit {
   
   // For Input in Todo 
-  @Input() todos : Array<TodoDTO> = [{name:"Todos 1", status: false},{name : "Todos 2", status : true}]
+  @Input() todos :TodoDTO[]=[];
 
-  @Output() dataTodo = new EventEmitter<string>();
-  
-  addTodo(name : any){
-    let todo = new TodoDTO();
-    todo.name = name;
-    todo.status = false;
-    this.todos.push(todo);
-  }
   constructor() { }
 
   ngOnInit(): void {
+    console.log('todos=========================',this.todos);    
   }
+  
+
+  // ngOnChanges(changes: any) {
+  //   console.log('todos=========================',this.todos);
+
+  // }
 
 }

@@ -1,5 +1,12 @@
-<p>todo works!</p>
+<p>todo works11111111!</p>
+<p>{{todos.length}}</p>
 
-<ul *ngFor="let todo1 of todos">
-    <li>{{ todo1.name }}</li>
-</ul>
+<ng-container *ngIf="todos.length > 0">
+    <ul type="null" *ngFor="let item of todos">
+        <li>
+        <input type="checkbox" class="strikethrough">
+        <input type="text" class="form-control strikeThis" [(ngModel)]="item.name" onclick="addTodo($event)">
+        </li>
+    </ul>
+</ng-container>
+
